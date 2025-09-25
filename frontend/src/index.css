@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* subtle focus ring for accessibility */
+:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(99,102,241,0.35);
+}
+
+/* Utility for animated gradient backgrounds */
+.animated-gradient {
+  background-size: 200% 200%;
+}
+
+/* Bubble base class (size variants applied inline) */
+.bubble {
+  @apply rounded-full opacity-70 backdrop-blur-sm; /* Tailwind utilities via @apply */
+}

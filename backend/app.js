@@ -7,7 +7,6 @@ import roadmapRoutes from "./routes/roadmap.js";
 
 dotenv.config();
 connectDB();
-
 const app = express();
 app.use(cors());
 app.use(express.json());
@@ -16,3 +15,4 @@ app.use("/api/auth", authRoutes);
 app.use("/api/roadmap", roadmapRoutes);
 
 export default app;
+

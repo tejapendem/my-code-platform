@@ -1,19 +1,18 @@
-// import express from "express";
-// import { signup, login } from "../controllers/authController.js";
-
-// const router = express.Router();
-
-// router.post("/signup", signup);
-// router.post("/login", login);
-
-// export default router;
-
-
 import express from "express";
+import { signup, login } from "../controllers/authController.js";
 import jwt from "jsonwebtoken";
 import User from "../models/user.js";
+import { forgotPassword, verifyOTP, resetPassword } from "../controllers/authController.js";
 
 const router = express.Router();
+
+router.post("/signup", signup);
+router.post("/login", login);
+router.post("/forgot-password", forgotPassword);
+router.post("/verify-otp", verifyOTP);       // <-- ADD THIS
+router.post("/reset-password", resetPassword); // optional if you use reset
+
+
 
 router.post("/google", async (req, res) => {
   try {
